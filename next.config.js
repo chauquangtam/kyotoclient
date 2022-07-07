@@ -1,6 +1,6 @@
 const path = require('path');
 const intercept = require("intercept-stdout")
-
+const baseUrl = '';
 function interceptStdout(text) {
     if (text.includes("Duplicate atom key")) {
         return ""
@@ -14,6 +14,15 @@ if (process.env.NODE_ENV === "production") {
 /** @type {import('next').NextConfig} */
 module.exports = {
     reactStrictMode: true,
+    poweredByHeader: false,
+    basePath: baseUrl,
+    trailingSlash: true,
+    env: {
+        baseUrl,
+    },
+    experimental: {
+        nextScriptWorkers: true,
+    },
     webpack: (config) => {
         config.resolve.alias['~'] = path.resolve(__dirname, 'src');
 
