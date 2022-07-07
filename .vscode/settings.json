@@ -2,5 +2,8 @@
     "editor.formatOnSave": true,
     "editor.formatOnPaste": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "cSpell.words": ["Doujinshi", "Manhua", "Manhwa"]
+    "cSpell.words": ["Doujinshi", "Manhua", "Manhwa"],
+    "[dotenv]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    }
 }
