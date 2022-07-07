@@ -20,6 +20,7 @@ module.exports = {
     env: {
         baseUrl,
     },
+    target: "serverless",
     experimental: {
         nextScriptWorkers: true,
     },
