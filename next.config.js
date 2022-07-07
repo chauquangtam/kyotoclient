@@ -1,5 +1,6 @@
 const path = require('path');
 const intercept = require("intercept-stdout")
+
 function interceptStdout(text) {
     if (text.includes("Duplicate atom key")) {
         return ""
@@ -7,7 +8,7 @@ function interceptStdout(text) {
     return text
 }
 
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === "production") {
     intercept(interceptStdout)
 }
 /** @type {import('next').NextConfig} */
