@@ -1,2 +1,6 @@
+[build.environment]
+NEXT_USE_NETLIFY_EDGE = "true"
+[build]
+publish = ".next"
 [[plugins]]
 package = "@netlify/plugin-nextjs"
