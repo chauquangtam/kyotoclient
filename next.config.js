@@ -9,7 +9,7 @@ function interceptStdout(text) {
     return text
 }
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "development") {
     intercept(interceptStdout)
 }
 /** @type {import('next').NextConfig} */
