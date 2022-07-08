@@ -1,20 +1,26 @@
 const path = require('path');
 const intercept = require("intercept-stdout")
+const baseUrl = '';
 
-/**
 function interceptStdout(text) {
     if (text.includes("Duplicate atom key")) {
         return ""
     }
     return text
 }
-*/
-/** if (process.env.NODE_ENV === "production") {
-     intercept(interceptStdout)
-*/
+
+if (process.env.NODE_ENV === "production") {
+    intercept(interceptStdout)
+}
 /** @type {import('next').NextConfig} */
 module.exports = {
     reactStrictMode: true,
+    poweredByHeader: false,
+    basePath: baseUrl,
+    trailingSlash: true,
+    env: {
+        baseUrl,
+    },
 
 
     webpack: (config) => {
